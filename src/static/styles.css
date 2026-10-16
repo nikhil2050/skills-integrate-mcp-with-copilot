@@ -16,12 +16,61 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.account-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+}
+
+.account-button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.account-button:hover {
+  background-color: #3949ab;
+}
+
+.account-button svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.account-menu {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  display: grid;
+  gap: 8px;
+  min-width: 160px;
+  padding: 12px;
+  color: #333;
+  text-align: left;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.account-menu p {
+  overflow-wrap: anywhere;
 }
 
 header h1 {
@@ -111,12 +160,11 @@ section h3 {
 }
 
 .delete-btn {
-  background: none;
-  border: none;
+  background: #ffebee;
   color: #c62828;
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
+  font-size: 13px;
+  padding: 4px 8px;
   transition: all 0.2s;
   border-radius: 3px;
 }
@@ -164,6 +212,39 @@ button:hover {
   background-color: #3949ab;
 }
 
+.secondary-button {
+  background-color: #666;
+}
+
+.secondary-button:hover {
+  background-color: #4d4d4d;
+}
+
+#login-dialog {
+  width: min(420px, calc(100% - 32px));
+  margin: auto;
+  padding: 24px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+}
+
+#login-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#login-dialog h2 {
+  margin-bottom: 18px;
+  color: #1a237e;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
 .message {
   margin-top: 20px;
   padding: 10px;
@@ -197,4 +278,14 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  header {
+    padding: 64px 12px 20px;
+  }
 }
